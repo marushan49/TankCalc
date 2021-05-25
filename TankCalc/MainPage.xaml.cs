@@ -1,30 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using Windows.UI.ViewManagement;
+using Windows.Foundation;
 
-// Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
+
+// Die Elementvorlage "NavigationView" wird unter https://docs.microsoft.com/de-de/windows/uwp/design/controls-and-patterns/navigationview dokumentiert.
 
 namespace TankCalc
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
+
+
+        }
+
+
+        private void NavigationView_Loaded(object sender, RoutedEventArgs e)
+        {
+            ContentFrame.Navigate(typeof(Views.Durchschnittsverbrauch));
+        }
+
+        private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            NavigationViewItem item = args.SelectedItem as NavigationViewItem;
+
+            switch (item.Tag.ToString())
+            {
+                case "dverbrauch":
+                    ContentFrame.Navigate(typeof(Views.Durchschnittsverbrauch));
+                    break;
+                case "fahrtkosten":
+                    ContentFrame.Navigate(typeof(Views.test));
+                    break;
+            }
         }
     }
 }
