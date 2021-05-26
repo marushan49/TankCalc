@@ -126,8 +126,8 @@
     <Compile Include="Views\Durchschnittsverbrauch.xaml.cs">
       <DependentUpon>Durchschnittsverbrauch.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
+    <Compile Include="Views\Fahrtkosten.xaml.cs">
+      <DependentUpon>Fahrtkosten.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -158,12 +158,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\test.xaml">
+    <Page Include="Views\Fahrtkosten.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Platforms">
+      <Version>5.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.12</Version>
     </PackageReference>

@@ -34,7 +34,7 @@ namespace TankCalc
                     ContentFrame.Navigate(typeof(Views.Durchschnittsverbrauch));
                     break;
                 case "fahrtkosten":
-                    ContentFrame.Navigate(typeof(Views.test));
+                    ContentFrame.Navigate(typeof(Views.Fahrtkosten));
                     break;
             }
         }

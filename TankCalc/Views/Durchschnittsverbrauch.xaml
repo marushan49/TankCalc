@@ -22,10 +22,10 @@
                 <ColumnDefinition Width="13*"/>
                 <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
-            <RadioButton Content="Benzin (2370 Co2 in g/l)" Margin="48,30,349,66" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  FontSize="29" FontFamily="Modern No. 20" IsChecked="True" Grid.ColumnSpan="2" Grid.Row="1"/>
-            <RadioButton Content="Diesel (2650 CO2 in g/l)" Margin="48,68,367,28" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="29" FontFamily="Modern No. 20" RenderTransformOrigin="0.718,0.515" Grid.ColumnSpan="2" Grid.Row="1"/>
-            <TextBlock x:Name="verbrauch_Copy" Margin="780,900,0,0" TextWrapping="Wrap" FontSize="30" FontFamily="Modern No. 20" HorizontalAlignment="Left" Width="270" Height="32" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1"><Run Text="Verbrauch auf "/><Run Text="100 km"/></TextBlock>
-            <TextBlock TextWrapping="Wrap" Width="150" Height="27" VerticalAlignment="Top" Margin="0,17,63,0" Grid.RowSpan="2" HorizontalAlignment="Right"><Run FontWeight="Bold" FontFamily="Modern No. 20" FontSize="25" Text="CO2 - Ausstoß"/></TextBlock>
+            <RadioButton Foreground="Black" Content="Benzin (2370 Co2 in g/l)" Margin="48,30,349,66" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  FontSize="29" FontFamily="Modern No. 20" IsChecked="True" Grid.ColumnSpan="2" Grid.Row="1"/>
+            <RadioButton Foreground="Black" Content="Diesel (2650 CO2 in g/l)" Margin="48,68,367,28" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" FontSize="29" FontFamily="Modern No. 20" RenderTransformOrigin="0.718,0.515" Grid.ColumnSpan="2" Grid.Row="1"/>
+            <TextBlock Foreground="Black" x:Name="verbrauch_Copy" Margin="780,900,0,0" TextWrapping="Wrap" FontSize="30" FontFamily="Modern No. 20" HorizontalAlignment="Left" Width="270" Height="32" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1"><Run Text="Verbrauch auf "/><Run Text="100 km"/></TextBlock>
+            <TextBlock TextWrapping="Wrap" Width="150" Height="27" Foreground="Black" VerticalAlignment="Top" Margin="0,17,63,0" Grid.RowSpan="2" HorizontalAlignment="Right"><Run FontWeight="Bold" FontFamily="Modern No. 20" FontSize="25" Text="CO2 - Ausstoß"/></TextBlock>
             <Button Content="CO2-Ausstoß &#xA;berechnen" Height="136" Margin="175,10,0,0" HorizontalContentAlignment="Center" Width="298" FontFamily="Modern No. 20" FontSize="35" Click="Button2_Click" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top"/>
         </Grid>
 
@@ -40,11 +40,11 @@
             </Grid.RowDefinitions>
 
             <TextBlock Margin="82,19,103,216" TextWrapping="Wrap" FontSize="35" FontFamily="Modern No. 20" Text="Gefahrene Strecke (in km)"/>
-            <TextBox x:Name="textbox1" Margin="92,85,118,136" Text="Kilometer" TextWrapping="Wrap"  FontSize="40" FontFamily="Modern No. 20" Tapped="textbox1_Tapped"/>
+            <TextBox x:Name="textbox1" Margin="92,85,118,136" Text="Kilometer" TextWrapping="Wrap"  FontSize="40" FontFamily="Modern No. 20"/>
 
-            <TextBlock Margin="46,19,110,226" TextWrapping="Wrap" FontSize="35" FontFamily="Modern No. 20" Grid.Column="1"><Run Text="Verbrauchte Liter"/><LineBreak/><Run/></TextBlock>
-            <TextBox x:Name="textbox2" Margin="28,85,111,136" Text="Liter" TextWrapping="Wrap"  FontSize="40" FontFamily="Modern No. 20" Tapped="textbox2_Tapped" Grid.Column="1"/>
-            <Button Content="Berechnen" Margin="367,226,0,11" VerticalAlignment="Stretch" RenderTransformOrigin="-0.419,0.5" FontSize="40" FontFamily="Modern No. 20" Click="Button_Click" Width="258" Background="#FF61ADC2" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+            <TextBlock Margin="46,19,110,226" TextWrapping="Wrap" FontSize="35" FontFamily="Modern No. 20" Grid.Column="1" FocusVisualPrimaryBrush="Black" ><Run Text="Verbrauchte Liter"/><LineBreak/><Run/></TextBlock>
+            <TextBox x:Name="textbox2" Margin="28,85,111,136" Text="Liter" TextWrapping="Wrap"  FontSize="40" FontFamily="Modern No. 20" Grid.Column="1"/>
+            <Button Content="Berechnen" Margin="367,194,0,43" VerticalAlignment="Stretch" RenderTransformOrigin="-0.419,0.5" FontSize="40" FontFamily="Modern No. 20" Click="Button_Click" Width="258" Background="#FF61ADC2" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
         </Grid>
         <TextBlock Margin="394,89,381,10" HorizontalTextAlignment="Center" TextWrapping="Wrap" FontSize="70" FontFamily="Modern No. 20" FontWeight="Bold" ><Run Text="Durchschnittsverbrauch"/><LineBreak/><LineBreak/><Run/></TextBlock>
 
