@@ -13,7 +13,7 @@
             <RowDefinition Height="177*"/>
             <RowDefinition Height="823*"/>
         </Grid.RowDefinitions>
-        <Grid Margin="182,588,587,82" Grid.Row="1" Tag="co2grid" Background="#FFF0F0F0">
+        <Grid Margin="189,588,580,82" Grid.Row="1" Tag="co2grid" Background="#FFF0F0F0" Width="731" Height="153" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="19*"/>
                 <RowDefinition Height="137*"/>
@@ -29,7 +29,7 @@
             <Button Content="CO2-Ausstoß &#xA;berechnen" Height="136" Margin="175,10,0,0" HorizontalContentAlignment="Center" Width="298" FontFamily="Modern No. 20" FontSize="35" Click="Button2_Click" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Top"/>
         </Grid>
 
-        <Grid Background="#FFF3F3F3" Margin="255,93,254,351" Grid.Row="1">
+        <Grid Background="#FFF3F3F3" Margin="0,113,0,331" Grid.Row="1" HorizontalAlignment="Center" Width="991" Height="379">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="575*"/>
                 <ColumnDefinition Width="416*"/>
@@ -49,7 +49,7 @@
         <TextBlock Margin="394,89,381,10" HorizontalTextAlignment="Center" TextWrapping="Wrap" FontSize="70" FontFamily="Modern No. 20" FontWeight="Bold" ><Run Text="Durchschnittsverbrauch"/><LineBreak/><LineBreak/><Run/></TextBlock>
 
 
-        <Grid Margin="1029,588,113,82" Grid.Row="1" Tag="co2grid" Background="#FFF0F0F0">
+        <Grid Grid.Row="1" Tag="co2grid" Background="#FFF0F0F0"  Width="358" Height="153"  Margin="1060,588,82,82">
             <TextBlock x:Name="verbrauch_Copy1" Margin="696,781,0,0" TextWrapping="Wrap" FontSize="30" FontFamily="Modern No. 20" HorizontalAlignment="Left" Width="270" Height="32" VerticalAlignment="Top" Grid.Row="2"><Run Text="Verbrauch auf "/><Run Text="100 km"/></TextBlock>
             <TextBlock x:Name="verbrauch" Margin="44,90,44,14" TextWrapping="Wrap" FontSize="30" FontFamily="Modern No. 20" RenderTransformOrigin="0.526,0.906"><Run Text="Verbrauch auf "/><Run Text="100 km"/></TextBlock>
             <TextBlock Margin="238,26,12,77" TextWrapping="Wrap" FontSize="45" FontFamily="Modern No. 20"><Run Text="Liter"/><LineBreak/><Run/></TextBlock>
