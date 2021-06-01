@@ -22,9 +22,6 @@ namespace TankCalc
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            //Bestimmte Größe öffnen
-            ApplicationView.PreferredLaunchViewSize = new Size(1200, 1200);
-            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
 
         /// <summary>
@@ -40,6 +37,7 @@ namespace TankCalc
             // Nur sicherstellen, dass das Fenster aktiv ist.
             if (rootFrame == null)
             {
+
                 // Frame erstellen, der als Navigationskontext fungiert und zum Parameter der ersten Seite navigieren
                 rootFrame = new Frame();
 
@@ -52,6 +50,10 @@ namespace TankCalc
 
                 // Den Frame im aktuellen Fenster platzieren
                 Window.Current.Content = rootFrame;
+
+                //Bestimmte Größe öffnen
+                ApplicationView.PreferredLaunchViewSize = new Size(1200, 1200);
+                ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
             }
 
             if (e.PrelaunchActivated == false)

@@ -16,11 +16,6 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Durchschnittsverbrauch" Icon="People" Tag="dverbrauch"/>
                 <NavigationViewItem Content="Fahrtkosten" Icon="Shop" Tag="fahrtkosten"/>
-                <NavigationViewItem Content="Customers" Tag="CustRepoView">
-                    <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE181;" FontFamily="Segoe UI Symbol"/>
-                    </NavigationViewItem.Icon>
-                </NavigationViewItem>
                 <NavigationViewItemSeparator/>
             </NavigationView.MenuItems>
             <Frame x:Name="ContentFrame" />

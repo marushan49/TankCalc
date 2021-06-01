@@ -8,7 +8,61 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Image HorizontalAlignment="Center" Height="418" Margin="0,312,0,0" VerticalAlignment="Top" Width="394" Source="/Assets/Square44x44Logo.scale-200.png"></Image>
+    <Grid Background="#FFA1D4FF" RenderTransformOrigin="0.516,0.483">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="71*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="219*"></RowDefinition>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="504*"></RowDefinition>
+            <RowDefinition Height="277*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock HorizontalTextAlignment="Center" TextWrapping="Wrap" FontSize="70" FontFamily="Modern No. 20" FontWeight="Bold" Foreground="Black" Height="76" VerticalAlignment="Center" HorizontalAlignment="Left" Width="725" Text="Fahrtkosten" Margin="391,0,0,0" />
+        <Grid Grid.Row="2" Background="#FF839FF3" Margin="30,26,30,10" RenderTransformOrigin="0.518,0.509">
+
+            <Grid Margin="42,36,28,31">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="153*"></ColumnDefinition>
+                    <ColumnDefinition Width="121*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <TextBlock x:Name="oder" FontFamily="Modern No. 20" HorizontalAlignment="Left" Margin="230,129,0,0" Text="oder Entfernung berechnen:" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="227" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="20" RenderTransformOrigin="0.5,0.524"/>
+                    <TextBox x:Name="origin" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="50" Width="225" PlaceholderText="Stadt" Margin="56,0,0,0"  TextChanged="origin_TextChanged"/>
+                    <Button x:Name="calcDistance" Content="Berechnen" Height="95" FontFamily="Modern No. 20" Margin="652,149,0,0" Width="103" Click="calcDistance_Click" FontSize="18" VerticalAlignment="Top"/>
+                    <TextBox x:Name="verbrauch" FontFamily="Modern No. 20" HorizontalAlignment="Left" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="225" RenderTransformOrigin="0.509,0.598" PlaceholderText="Liter" Margin="368,278,0,0"/>
+                    <TextBlock x:Name="verbr" FontFamily="Modern No. 20" HorizontalAlignment="Left" Margin="70,283,0,0" Text="Verbrauch in l (pro 100 km)" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="276" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="24"/>
+                    <Button x:Name="lastVerbrauch" Content="Zuletzt berechnete Verbrauch nehmen!" FontFamily="Modern No. 20" Height="57" Margin="180,344,0,0" VerticalAlignment="Top" Width="344" FontSize="20" Click="lastVerbrauch_Click" />
+                    <TextBox x:Name="entfernung" FontFamily="Modern No. 20" HorizontalAlignment="Left" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="225" RenderTransformOrigin="0.502,0.49" PlaceholderText="Kilometer" Margin="240,54,0,0"/>
+                    <TextBlock x:Name="Entf" FontFamily="Modern No. 20" HorizontalAlignment="Left" Margin="269,10,0,0" Text="Entfernung (km)" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="167" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="24" RenderTransformOrigin="0.5,0.524"/>
+                    <Button x:Name="locationButton" Margin="286,0,0,0" Width="35" Height="40" Click="locationButton_Click">
+                        <Grid Margin="-5,-3,-5,-3">
+                            <Image Source="/Assets/loc.png" Stretch="Fill" Margin="4,5,3,5" />
+                        </Grid>
+                    </Button>
+                </Grid>
+                <TextBox x:Name="preis" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="225" RenderTransformOrigin="0.509,0.598" PlaceholderText="Liter" Margin="376,139,0,0" Grid.Column="1"/>
+                <TextBlock x:Name="Spritpreis" Margin="83,149,0,0" Text="Spritpreis pro Liter"  FontFamily="Modern No. 20" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="22" HorizontalAlignment="Left" Width="246" Grid.Column="1"/>
+                <TextBlock x:Name="person" HorizontalAlignment="Left" Margin="83,204,0,0" Text="Personenanzahl" FontFamily="Modern No. 20" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="189" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="22" RenderTransformOrigin="0.742,-3.768" Grid.Column="1"/>
+                <TextBox x:Name="personen" HorizontalAlignment="Left" FontSize="20" Text="1" FontFamily="Modern No. 20" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="225" RenderTransformOrigin="0.509,0.598" Margin="376,194,0,0" Grid.Column="1"/>
+                <CheckBox x:Name="abnutzung" Content="Abnutzung berücksichtigen" FontFamily="Modern No. 20" FontSize="20" Margin="0,23,0,0" Foreground="Black" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Center" Height="32" Width="255" FontWeight="Normal"/>
+                <CheckBox x:Name="back" Content="Mit Rückfahrt" FontSize="20" FontFamily="Modern No. 20" Margin="0,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.478,0.609" Grid.Column="1" HorizontalAlignment="Center" Height="32" Width="157"/>
+                <TextBlock x:Name="sonstigeGebuehren" HorizontalAlignment="Left" FontFamily="Modern No. 20" Margin="83,263,0,0" Text="Sonstige Gebühren" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="207" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="22" RenderTransformOrigin="0.742,-3.768" Grid.Column="1"/>
+                <TextBox x:Name="sonstige" HorizontalAlignment="Left" FontSize="20" FontFamily="Modern No. 20" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="225" RenderTransformOrigin="0.509,0.598" PlaceholderText="Euro" Margin="376,253,0,0" Grid.Column="1" />
+                <TextBlock x:Name="nach" HorizontalAlignment="Left" FontFamily="Modern No. 20" Margin="342,186,0,0" Text="Nach:" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="60" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="24" RenderTransformOrigin="0.5,0.524"/>
+                <TextBlock x:Name="von" HorizontalAlignment="Left" FontFamily="Modern No. 20" Text="Von:" TextWrapping="Wrap" VerticalAlignment="Center" Height="26" Width="54" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="24" RenderTransformOrigin="-0.093,0.542"/>
+                <TextBox x:Name="destination" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="50" Width="225" RenderTransformOrigin="0.502,0.49" PlaceholderText="Stadt" Margin="409,0,0,0" TextChanged="destination_TextChanged"/>
+                <Button x:Name="fahrtCalc" Content="Fahrtkosten berechnen!" FontFamily="Modern No. 20" Margin="111,333,0,0" VerticalAlignment="Top" Height="58" Width="449" RenderTransformOrigin="0.508,0.55" Grid.Column="1" FontSize="22" Click="fahrtCalc_Click" />
+            </Grid>
+
+        </Grid>
+        <Grid Name="resultGrid" Grid.Row="3" Margin="30,32,30,39" FocusVisualPrimaryBrush="White">
+            <TextBlock x:Name="result" HorizontalAlignment="Left" FontFamily="Modern No. 20" Margin="40,0,0,0" Text="Ergebnis: " TextWrapping="Wrap" VerticalAlignment="Center" Height="100" Width="1364" FontSize="36" Foreground="Black" FontWeight="Bold" />
+        </Grid>
+
+
     </Grid>
 </Page>
