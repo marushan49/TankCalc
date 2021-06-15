@@ -33,14 +33,14 @@
                     <TextBlock x:Name="oder" FontFamily="Modern No. 20" HorizontalAlignment="Left" Margin="230,129,0,0" Text="oder Entfernung berechnen:" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="227" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="20" RenderTransformOrigin="0.5,0.524"/>
                     <TextBox x:Name="origin" HorizontalAlignment="Left" FontFamily="Modern No. 20" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="50" Width="225" PlaceholderText="Stadt" Margin="56,0,0,0"  TextChanged="origin_TextChanged"/>
                     <Button x:Name="calcDistance" Content="Berechnen" Height="95" FontFamily="Modern No. 20" Margin="652,149,0,0" Width="103" Click="calcDistance_Click" FontSize="18" VerticalAlignment="Top"/>
-                    <TextBox x:Name="verbrauch" FontFamily="Modern No. 20" HorizontalAlignment="Left" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="225" RenderTransformOrigin="0.509,0.598" PlaceholderText="Liter" Margin="368,278,0,0"/>
+                    <TextBox x:Name="verbrauch" FontFamily="Modern No. 20" HorizontalAlignment="Left" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="255" RenderTransformOrigin="0.509,0.598" PlaceholderText="Liter" Margin="383,271,0,0"/>
                     <TextBlock x:Name="verbr" FontFamily="Modern No. 20" HorizontalAlignment="Left" Margin="70,283,0,0" Text="Verbrauch in l (pro 100 km)" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="276" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="24"/>
                     <Button x:Name="lastVerbrauch" Content="Zuletzt berechnete Verbrauch nehmen!" FontFamily="Modern No. 20" Height="57" Margin="180,344,0,0" VerticalAlignment="Top" Width="344" FontSize="20" Click="lastVerbrauch_Click" />
                     <TextBox x:Name="entfernung" FontFamily="Modern No. 20" HorizontalAlignment="Left" FontSize="20" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="225" RenderTransformOrigin="0.502,0.49" PlaceholderText="Kilometer" Margin="240,54,0,0"/>
                     <TextBlock x:Name="Entf" FontFamily="Modern No. 20" HorizontalAlignment="Left" Margin="269,10,0,0" Text="Entfernung (km)" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="167" FocusVisualPrimaryBrush="Black" Foreground="Black" FontSize="24" RenderTransformOrigin="0.5,0.524"/>
                     <Button x:Name="locationButton" Margin="286,0,0,0" Width="35" Height="40" Click="locationButton_Click">
                         <Grid Margin="-5,-3,-5,-3">
-                            <Image Source="/Assets/loc.png" Stretch="Fill" Margin="4,5,3,5" />
+                            <Image Source="/Assets/loc.png" Stretch="Fill" Margin="0,5,0,5" HorizontalAlignment="Center" Width="20" />
                         </Grid>
                     </Button>
                 </Grid>
@@ -60,7 +60,7 @@
 
         </Grid>
         <Grid Name="resultGrid" Grid.Row="3" Margin="30,32,30,39" FocusVisualPrimaryBrush="White">
-            <TextBlock x:Name="result" HorizontalAlignment="Left" FontFamily="Modern No. 20" Margin="40,0,0,0" Text="Ergebnis: " TextWrapping="Wrap" VerticalAlignment="Center" Height="100" Width="1364" FontSize="36" Foreground="Black" FontWeight="Bold" />
+            <TextBlock x:Name="result" HorizontalAlignment="Left" FontFamily="Modern No. 20" Margin="40,0,0,0" Text="Ergebnis: " TextWrapping="Wrap" VerticalAlignment="Center" Height="100" Width="1364" FontSize="30" Foreground="Black" FontWeight="Bold" />
         </Grid>
 
 

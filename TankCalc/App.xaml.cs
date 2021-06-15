@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.ViewManagement;
 using Windows.Foundation;
+using Windows.Graphics.Display;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -23,6 +25,7 @@ namespace TankCalc
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+
 
         /// <summary>
         /// Wird aufgerufen, wenn die Anwendung durch den Endbenutzer normal gestartet wird. Weitere Einstiegspunkte
@@ -52,8 +55,13 @@ namespace TankCalc
                 Window.Current.Content = rootFrame;
 
                 //Bestimmte Größe öffnen
-                ApplicationView.PreferredLaunchViewSize = new Size(1200, 1200);
+                string heightsize = DisplayInformation.GetForCurrentView().ScreenHeightInRawPixels.ToString();
+                string widthsize = DisplayInformation.GetForCurrentView().ScreenWidthInRawPixels.ToString();
+                Size mysize = new Size(Convert.ToDouble(widthsize), Convert.ToDouble(heightsize));
+
+                ApplicationView.PreferredLaunchViewSize = mysize;
                 ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+                ApplicationView.GetForCurrentView().SetPreferredMinSize(mysize);
             }
 
             if (e.PrelaunchActivated == false)
@@ -90,7 +98,6 @@ namespace TankCalc
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Anwendungszustand speichern und alle Hintergrundaktivitäten beenden
             deferral.Complete();
         }
 

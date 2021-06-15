@@ -1,8 +1,5 @@
-﻿using Windows.UI.Popups;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Storage;
 using System;
 

@@ -41,7 +41,7 @@
             <Button Content="Berechnen" FontSize="40" FontFamily="Modern No. 20" Click="Button_Click" Width="520" Background="#FF61ADC2" Foreground="Black" FocusVisualPrimaryBrush="#FFBBF9FF" Height="72" Grid.Row="1" Margin="196,0,0,0" Grid.ColumnSpan="3"/>
         </Grid>
 
-        <Grid Tag="co2grid" Background="#FFA1E5FF" Margin="131,12,113,25" Grid.Row="2" Grid.Column="1">
+        <Grid Tag="co2grid" Background="#FFA1E5FF" Margin="131,12,0,0" Grid.Row="2" Grid.Column="1" Height="177" VerticalAlignment="Top" HorizontalAlignment="Left" Width="704">
             <RadioButton Name="benzin"  Content="Benzin (2370 Co2 in g/l)" Margin="48,54,0,0"  FontSize="29" FontFamily="Modern No. 20" IsChecked="True" Foreground="Black" FocusVisualPrimaryBrush="Black" VerticalAlignment="Top" Width="338"/>
             <RadioButton Name="diesel" Content="Diesel (2650 CO2 in g/l)" Margin="48,105,0,0"  FontSize="29" FontFamily="Modern No. 20" RenderTransformOrigin="0.718,0.515" Foreground="Black" FocusVisualPrimaryBrush="Black" VerticalAlignment="Top"/>
             <TextBlock x:Name="verbrauch_Copy" Margin="780,900,0,0" TextWrapping="Wrap" FontSize="30" FontFamily="Modern No. 20" HorizontalAlignment="Left" Width="270" Height="32" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1"><Run Text="Verbrauch auf "/><Run Text="100 km"/></TextBlock>

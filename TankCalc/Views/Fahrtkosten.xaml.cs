@@ -1,21 +1,11 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
-using System.Net;
-using System.Net.Mime;
-using System.Runtime.Serialization.Json;
-using System.Text.RegularExpressions;
 using Windows.Devices.Geolocation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Storage;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Newtonsoft.Json.Linq;
-using Xamarin.Forms;
 using Color = Windows.UI.Color;
 using Page = Windows.UI.Xaml.Controls.Page;
 using TextChangedEventArgs = Windows.UI.Xaml.Controls.TextChangedEventArgs;
@@ -66,8 +56,8 @@ namespace TankCalc.Views
                 {
                     result.Text = "";
                     result.Text = result.Text + " Bei " + personenAnzahl +
-                                  " Personen entsteht ein Spritverbrauch von " +
-                                  spritkosten/personenAnzahl + "Euro und der insgesamte Fahrtkosten liegt bei: " + gesamt + " Euro pro Person";
+                                  " Personen: \n Spritverbrauch: " +
+                                  Math.Round(spritkosten /personenAnzahl,2) + " Euro pro Person \n Insgesamte Fahrtkosten: " + gesamt + " Euro pro Person";
                     resultGrid.Background = new Windows.UI.Xaml.Media.SolidColorBrush(Color.FromArgb(255, 58, 249, 75));
                 }
                 else
@@ -111,7 +101,6 @@ namespace TankCalc.Views
         */
         private double getDistance(String origin, String destination)
         {
-            System.Threading.Thread.Sleep(1000);
             double distance = 0;
 
             //REST - Service requestURL von Bing
@@ -168,10 +157,10 @@ namespace TankCalc.Views
                 {
                     loc = new Geolocator();
                     Geoposition pos = await loc.GetGeopositionAsync();
-                    longitude = pos.Coordinate.Point.Position.Longitude.ToString();
-                    latitude = pos.Coordinate.Point.Position.Latitude.ToString();
+                    longitude = pos.Coordinate.Point.Position.Longitude.ToString(new CultureInfo("en-US"));
+                    latitude = pos.Coordinate.Point.Position.Latitude.ToString(new CultureInfo("en-US"));
 
-                    von.Text = getLocation(latitude, longitude).ToString();
+                    origin.Text = getLocation(latitude, longitude);
                 }
                 else
                 {
@@ -183,10 +172,10 @@ namespace TankCalc.Views
         /* getLocation Methode benutzt den REST Service, um
            mithilfe des Longitudes und Latitudes den jetzigen Standort (Stadt) herauszufinden!
         */
-        private double getLocation(String lat, String longi)
+        private string getLocation(String lat, String longi)
         {
-            System.Threading.Thread.Sleep(1000);
-            double distance = 0;
+
+            string Location = "NaN";
 
             //REST - Service requestURL von Bing
             string url =
@@ -202,12 +191,12 @@ namespace TankCalc.Views
             try
             {
                 //Pfad zum Attribut
-                distance = (double)output.SelectToken("resourceSets[0].resources[0].location[0].Address[0].Locality");
-                return distance;
+                Location = (string) output.SelectToken("resourceSets[0].resources[0].address.locality");
+                return Location;
             }
             catch
             {
-                return 0;
+                return "NaN";
             }
         }
 
@@ -291,7 +280,7 @@ namespace TankCalc.Views
             return true;
         }
 
-        //Überprüfung ob falsche/nicht prozessbare Eingaben -> wenn ja Fehlermeldung
+        //Überprüfung ob falsche/nicht prozessbare Eingaben -> wenn ja return true; 
 
         private bool checkCorrect()
         {
@@ -336,6 +325,7 @@ namespace TankCalc.Views
             return true;
         }
 
+
         //MessageBox - Fehlermeldung
 
         private async void ErrorButton(string Titel, string Meldung, string buttonText)
@@ -357,14 +347,15 @@ namespace TankCalc.Views
             string me = string.Empty;
             try
             {
-                if (fileName.ToLower().IndexOf("http:") > -1) //Wenn JSON als Seite ausgegeben
+                //Wenn JSON als Seite ausgegeben, soll dieser Code es runterladen und zu einem String compilen.
+                if (fileName.ToLower().IndexOf("http:") > -1) 
                 {
                     System.Net.WebClient wc = new System.Net.WebClient();
                     byte[] response = wc.DownloadData(fileName);
                     sContents = System.Text.Encoding.ASCII.GetString(response);
 
                 }
-                else //Wenn als File übergeben
+                else //Wenn JSON als File mit Dateipfad übergeben
                 {
                     System.IO.StreamReader sr = new System.IO.StreamReader(fileName);
                     sContents = sr.ReadToEnd();

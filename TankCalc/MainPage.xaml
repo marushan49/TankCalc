@@ -18,7 +18,8 @@
                 <NavigationViewItem Content="Fahrtkosten" Icon="Shop" Tag="fahrtkosten"/>
                 <NavigationViewItemSeparator/>
             </NavigationView.MenuItems>
-            <Frame x:Name="ContentFrame" />
+
+            <ScrollViewer> <Frame x:Name="ContentFrame"></Frame></ScrollViewer>
         </NavigationView>
     </Grid>
 </Page>
