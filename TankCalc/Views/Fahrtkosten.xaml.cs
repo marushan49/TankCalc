@@ -18,7 +18,7 @@ namespace TankCalc.Views
     public sealed partial class Fahrtkosten : Page
     {
         private string key =
-            "KXqyLbZVARd83es5oMsK~5-tIBsrqh802DO3xzYZRew~Al5Ns_-9mCgBcDDCPjqUlKbyolDU4sOegJf8bdgQ0aEymfe-SKZjbFmSgwF4UArE";
+            "YourKey";
 
         public Fahrtkosten()
         {
